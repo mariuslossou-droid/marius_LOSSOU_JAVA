@@ -1,5 +1,6 @@
 package org.example.controller;
 
+@RestControllerAdvice
 public class ControllerExeptionHandler {
 
     ProblemDetail handleValidationException(MethodArgumentNotValidException e )
@@ -8,6 +9,6 @@ public class ControllerExeptionHandler {
                 HttpStatus.UNPROCESSABLE_CONTENT,
                 "Validation Error"
         );
-        return null;
+        return ProblemDetail;
     }
 }
